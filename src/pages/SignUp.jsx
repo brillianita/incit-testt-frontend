@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#49108B',
+      main: '#053B50',
     },
   },
 });

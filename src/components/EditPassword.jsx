@@ -29,9 +29,6 @@ export default function EditPassword() {
   }
   const id = getCookie('id');
   const updatePassword = async (data) => {
-    console.log('data update', data);
-    console.log('id update', id)
-    console.log('json stringfy', JSON.stringify(data))
     const response = await fetch(`http://localhost:3300/users/edit-password/${id}`, {
       method: 'PUT',
       headers: {
@@ -41,7 +38,6 @@ export default function EditPassword() {
       body: JSON.stringify(data)
     });
     const responseData = await response.json();
-    console.log('responseData', responseData)
     if (responseData.status === 'fail') {
       alert(responseData.message)
     } else {
@@ -56,7 +52,6 @@ export default function EditPassword() {
     const user = {
       ...data
     };
-    console.log('user mutate', user)
     mutate(user)
   }
   return (

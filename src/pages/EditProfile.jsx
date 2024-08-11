@@ -13,7 +13,6 @@ export default function EditProfile() {
   }
   const id = getCookie('id');
   const getDetailUser = async () => {
-    console.log('idicookie', id)
     const response = await fetch(`http://localhost:3300/users/${id}`, {
       method: 'GET',
       headers: {
@@ -22,12 +21,10 @@ export default function EditProfile() {
       credentials: 'include'
     })
     const responseData = await response.json()
-    console.log('responseData', responseData)
 
     return responseData.data
   }
   const { data, error, isError, isLoading } = useQuery('create', getDetailUser)
-  console.log('resultData', data)
 
   if (isLoading) {
     return <div>Loading...</div>

@@ -28,7 +28,6 @@ export default function MenuNavbar() {
 
   const handleLogout = async () => {
     const idUser = getCookie('id');
-    console.log('idUser', idUser)
     const response = await fetch(`http://localhost:3300/logout/${idUser}`, {
       method: 'DELETE',
       headers: {
@@ -37,7 +36,6 @@ export default function MenuNavbar() {
       credentials: 'include'
     });
     const responseData = await response.json()
-    console.log('responseData Delete', responseData);
     if(responseData.status === 'fail') {
       alert(responseData.message);
     } else {

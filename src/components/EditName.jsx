@@ -16,16 +16,13 @@ import {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#49108B',
+      main: '#053B50',
     },
   },
 });
 export default function EditName(props) {
   // PUT Name
   const updateName = async (data) => {
-    console.log('data update', data);
-    console.log('id update', id)
-    console.log('json stringfy', JSON.stringify(data))
     const response = await fetch(`http://localhost:3300/users/edit-name/${id}`, {
       method: 'PUT',
       headers: {
@@ -45,6 +42,7 @@ export default function EditName(props) {
     mode: 'onChange'
   });
   const { mutate } = useMutation(updateName);
+  // eslint-disable-next-line react/prop-types, no-unused-vars
   const {email, name} = props;
   const [newName, setNewName] = useState(null);
   // const cookie = document.cookie;
@@ -67,7 +65,7 @@ export default function EditName(props) {
     const user = {
       ...data
     };
-    console.log('user mutate', user)
+
     mutate(user)
   }
   return (

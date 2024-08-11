@@ -26,7 +26,6 @@ export default function Dashboard() {
       credentials: 'include'
     })
     const responseDetailsData = await responseDetails.json()
-    console.log('responseData', responseDetailsData)
 
 
     const responseStatistics = await fetch('http://localhost:3300/users/statistics', {
@@ -41,7 +40,7 @@ export default function Dashboard() {
       details: responseDetailsData.data,
       statistics: responseStatisticsData.data
     }
-    console.log(('responseData', responseData));
+ 
     
     return responseData
   }

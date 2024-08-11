@@ -20,7 +20,7 @@ import { useMutation } from 'react-query';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#49108B',
+      main: '#053B50',
     },
   },
 });
@@ -40,9 +40,7 @@ export default function Login() {
     if (responseData.status === 'fail') {
       alert(responseData.message)
     } else {
-      console.log(responseData)
       navigate('/dashboard', { replace: true });
-      console.log('success')
     }
   }
 
